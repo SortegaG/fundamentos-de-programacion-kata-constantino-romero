@@ -44,23 +44,26 @@ function imprimePregunta(pregunta) {
 }
 
 function imprimeTitulo(pregunta) {
-  // Put your code here
+  return pregunta.titulo;
 }
 
 function imprimeTodasLasRespuestas(pregunta) {
-  // Put your code here
+  let respuestas = "";
+  for (let i = 0; i < pregunta.respuesta.length; i++){
+    respuestas += imprimeUnaRespuesta[i];
+  }
 }
 
 function imprimeUnaRespuesta(respuesta) {
-  // Put your code here
+  return imprimeLabel(respuesta)+imprimeInput(respuesta);
 }
 
 function imprimeLabel(respuesta) {
-  // Put your code here
+  return `<label for=${pregunta.respuestas[respuesta].id}>${pregunta.respuestas[respuesta].label}</label>`;
 }
 
 function imprimeInput(respuesta) {
-  // Put your code here
+  return `<input id=${pregunta.respuestas[respuesta].id} name=${pregunta.respuestas[respuesta].name} type="radio" value=${pregunta.respuestas[respuesta].value}>`;
 }
 
 document.getElementById("contenedorPreguntas").innerHTML = imprimePregunta(pregunta);
